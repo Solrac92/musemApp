@@ -35,10 +35,8 @@ import java.util.List;
 
 public class ArtListFragment extends Fragment implements LoaderManager.LoaderCallbacks<List<String>> {
 
-    int mCurrentPosition = -1;
     private static final int THE_LOADER = 0x01;
     private View myFragmentView;
-    private static View view;
     ArrayAdapter<String> adapter;
     public final static String EXTRA_MESSAGE ="com.example.android.fragments.MESSAGE";
     @Override
@@ -138,7 +136,7 @@ public class ArtListFragment extends Fragment implements LoaderManager.LoaderCal
         }
     }*/
 
-    public void updateArticleView(String Content) {
+   /* public void updateArticleView(String Content) {
         //TextView article = (TextView) getActivity().findViewById(R.id.article);
         //article.setText(Ipsusdm.Articles[position]);
        // mCurrentPosition = position;
@@ -150,7 +148,7 @@ public class ArtListFragment extends Fragment implements LoaderManager.LoaderCal
 
         //getActivity().
 
-    }
+    }*/
 
 
 
@@ -214,8 +212,8 @@ public class ArtListFragment extends Fragment implements LoaderManager.LoaderCal
         final ListView listview = (ListView) myFragmentView.findViewById(R.id.listview2);
         listview.setAdapter(null);
     }
-    public interface OnHeadlineSelectedListener {
-        public void onArticleSelected(int position);
-    }
+    /*public interface OnHeadlineSelectedListener {
+        //public void onArticleSelected(int position);
+    }*/
 
 }

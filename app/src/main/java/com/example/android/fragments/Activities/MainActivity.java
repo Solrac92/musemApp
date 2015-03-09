@@ -36,12 +36,12 @@ public class MainActivity extends ActionBarActivity
 
     static final String ACTION_SCAN = "com.google.zxing.client.android.SCAN";
     boolean tablet = true;
-    String MainC;
+    //String MainC;
 
     // Container Activity must implement this interface
-    public interface OnHeadlineSelectedListener {
+  /*  public interface OnHeadlineSelectedListener {
         public void onArticleSelected(int position);
-    }
+    }*/
 
     /**
      * Called when the activity is first created.
@@ -209,24 +209,16 @@ public class MainActivity extends ActionBarActivity
             startActivity(intent);
 
         }
-        else {
+        /*else {
 
-        }
+        }*/
     }
 
 
     //QR!
 
 
-    public void scanBar(View v) {
-        try {
-            Intent intent = new Intent(ACTION_SCAN);
-            intent.putExtra("SCAN_MODE", "PRODUCT_MODE");
-            startActivityForResult(intent, 0);
-        } catch (ActivityNotFoundException anfe) {
-            showDialog(MainActivity.this, "No Scanner Found", "Download a scanner code activity?", "Yes", "No").show();
-        }
-    }
+
 
     public void scanQR(View v) {
         try {
@@ -261,7 +253,7 @@ public class MainActivity extends ActionBarActivity
     }
 
 
-    private AlertDialog showCatchedDialog(final Activity act, CharSequence title, CharSequence message, CharSequence buttonYes, CharSequence buttonNo, final String artNum) {
+    private AlertDialog showCatchedDialog(final Activity act, CharSequence title, CharSequence message, CharSequence buttonYes, CharSequence buttonNo) {
         AlertDialog.Builder downloadDialog = new AlertDialog.Builder(act);
         downloadDialog.setTitle(title);
         downloadDialog.setMessage(message);
@@ -301,7 +293,7 @@ public class MainActivity extends ActionBarActivity
         return downloadDialog.show();
     }
 
-    public String getThreeMains (String text) {
+    /*public String getThreeMains (String text) {
 
         int iniPos;
         int lastPost;
@@ -326,14 +318,14 @@ public class MainActivity extends ActionBarActivity
 
         return art_num +": " + aut_name + " (" + art_name +")";
 
-    }
+    }*/
 
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
         if (requestCode == 0) {
             if (resultCode == RESULT_OK) {
                 String contents = intent.getStringExtra("SCAN_RESULT");
                 String format = intent.getStringExtra("SCAN_RESULT_FORMAT");
-                MainC = getThreeMains(contents);
+               // MainC = getThreeMains(contents);
                 MuseumDbHelper MDBH = new MuseumDbHelper(getApplicationContext());
 
                 String added = MDBH.insertFromQR(contents);
@@ -341,7 +333,7 @@ public class MainActivity extends ActionBarActivity
                 if (added != null) {
 
                     if (!tablet) {
-                        showCatchedDialog(this, getString(R.string.catched_title), getString(R.string.catched_subtitle), getString(R.string.positive), getString(R.string.negative), added).show();
+                        showCatchedDialog(this, getString(R.string.catched_title), getString(R.string.catched_subtitle), getString(R.string.positive), getString(R.string.negative)).show();
                     }
                     else {
 
