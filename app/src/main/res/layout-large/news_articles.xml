@@ -25,7 +25,7 @@ limitations under the License.
             android:layout_height="match_parent"
             android:gravity="center_vertical"
             android:orientation="vertical"
-            android:layout_weight="1"
+            android:layout_weight="3"
             android:background="@color/android_light_green">
 
                 <include layout="@layout/catch_layout"/>
@@ -40,7 +40,7 @@ limitations under the License.
 
     <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/article_fragment"
-        android:layout_weight="2"
+        android:layout_weight="5"
         android:layout_width="0dp"
         android:layout_height="match_parent" />
 

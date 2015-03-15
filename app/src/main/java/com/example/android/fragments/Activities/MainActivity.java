@@ -63,15 +63,17 @@ public class MainActivity extends ActionBarActivity implements HeadlinesFragment
             getSupportFragmentManager().beginTransaction()
                                        .add(R.id.fragment_container, firstFragment).commit();
 
-        }
 
-        if(tablet) {
 
-            ArtListFragment artList = new ArtListFragment();
+            if(tablet) {
 
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.article_fragment, artList).commit();
+                ArtListFragment artList = new ArtListFragment();
 
+                getSupportFragmentManager().beginTransaction()
+                        .add(R.id.article_fragment, artList).commit();
+
+
+            }
 
         }
 
