@@ -10,7 +10,7 @@ MockUps: http://cg.calatrava.me/Documentation/MockUps/MockUps.jpg
         
 Rubric: http://cg.calatrava.me/Documentation/Rubric/The%20Rubric.pdf
 
-///////////////////////////////////////////////////////////////////////
+---->
 Diferent Improved Versions of the APP can be found in diferent Branches
--- > Make sure to check the last release! < --
-///////////////////////////////////////////////////////////////////////
+Make sure to check the last release!
+<----
