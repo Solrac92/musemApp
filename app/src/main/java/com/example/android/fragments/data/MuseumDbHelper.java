@@ -63,7 +63,7 @@ public class MuseumDbHelper extends SQLiteOpenHelper {
     //DONE
     public Cursor findArtJob(int art_num) {
         //String[] projection = {MuseumContract.MuseumInfo.COLUMN_NUMBER_ART,
-          //      MuseumContract.MuseumInfo.COLUMN_NAME_AUTHOR};
+        //MuseumContract.MuseumInfo.COLUMN_NAME_AUTHOR};
 
         String selection = String.valueOf(MuseumContract.MuseumInfo.COLUMN_NUMBER_ART) + " = \"" + art_num + "\"";
 

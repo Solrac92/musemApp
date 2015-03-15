@@ -1425,8 +1425,9 @@ containing a value of this type.
         public static final int article_view=0x7f030019;
         public static final int artjobs_view=0x7f03001a;
         public static final int catch_layout=0x7f03001b;
-        public static final int news_articles=0x7f03001c;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001d;
+        public static final int fragment_instructions=0x7f03001c;
+        public static final int news_articles=0x7f03001d;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001e;
     }
     public static final class menu {
         public static final int menu_art_ciclopedia=0x7f0d0000;
