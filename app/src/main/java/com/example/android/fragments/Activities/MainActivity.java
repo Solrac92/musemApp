@@ -64,14 +64,25 @@ public class MainActivity extends ActionBarActivity implements HeadlinesFragment
                                        .add(R.id.fragment_container, firstFragment).commit();
 
         }
+
+        if(tablet) {
+
+            ArtListFragment artList = new ArtListFragment();
+
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.article_fragment, artList).commit();
+
+
+        }
+
     }
 
     public void onArticleSelected(int position) {
 
         if (position == 0) {
 
-            //scanQR(this.getWindow().getDecorView().findViewById(android.R.id.content));
-            addRandomArtJob();
+            scanQR(this.getWindow().getDecorView().findViewById(android.R.id.content));
+            //addRandomArtJob();
 
         }
 
@@ -130,8 +141,17 @@ public class MainActivity extends ActionBarActivity implements HeadlinesFragment
 
         if(tablet) {
 
-            finish();
-            startActivity(getIntent());
+            //finish();
+            //startActivity(getIntent());
+
+            ArtListFragment newFragment = new ArtListFragment();
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+
+            transaction.replace(R.id.article_fragment, newFragment);
+            transaction.addToBackStack(null); //Can navigate back
+
+            transaction.commit();
+
 
         } else { //Mobile
 

@@ -38,10 +38,16 @@ limitations under the License.
         </LinearLayout>
 
 
-    <fragment android:name="com.example.android.fragments.Fragments.ArtListFragment"
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/article_fragment"
+        android:layout_weight="2"
+        android:layout_width="0dp"
+        android:layout_height="match_parent" />
+
+   <!-- <fragment android:name="com.example.android.fragments.Fragments.ArtListFragment"
               android:id="@+id/article_fragment"
               android:layout_weight="2"
               android:layout_width="0dp"
-              android:layout_height="match_parent" />
+              android:layout_height="match_parent" />-->
 
 </LinearLayout>
