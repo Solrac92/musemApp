@@ -60,22 +60,21 @@ public class MainActivity extends ActionBarActivity implements HeadlinesFragment
 
             firstFragment.setArguments(getIntent().getExtras()); //In intent case
 
-            getSupportFragmentManager().beginTransaction()
-                                       .add(R.id.fragment_container, firstFragment).commit();
-
-
-
-            if(tablet) {
-
-                ArtListFragment artList = new ArtListFragment();
-
                 getSupportFragmentManager().beginTransaction()
-                        .add(R.id.article_fragment, artList).commit();
+                        .add(R.id.fragment_container, firstFragment).commit();
 
-
-            }
 
         }
+
+        /*if(tablet) {
+
+            ArtListFragment artList = new ArtListFragment();
+
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.article_fragment, artList).commit();
+
+
+        }*/
 
     }
 
@@ -101,7 +100,7 @@ public class MainActivity extends ActionBarActivity implements HeadlinesFragment
                 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
                 transaction.replace(R.id.article_fragment, newFragment);
-                transaction.addToBackStack(null); //Can navigate back
+               // transaction.addToBackStack(null); //Can navigate back
 
                 transaction.commit();
 
@@ -150,7 +149,7 @@ public class MainActivity extends ActionBarActivity implements HeadlinesFragment
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
             transaction.replace(R.id.article_fragment, newFragment);
-            transaction.addToBackStack(null); //Can navigate back
+            //transaction.addToBackStack(null); //Can navigate back
 
             transaction.commit();
 

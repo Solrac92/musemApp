@@ -39,6 +39,7 @@ public class ArtListFragment extends Fragment implements LoaderManager.LoaderCal
     private View myFragmentView;
     public ArrayAdapter<String> adapter;
     public final static String EXTRA_MESSAGE ="com.example.android.fragments.MESSAGE";
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, 
         Bundle savedInstanceState) {
@@ -67,7 +68,7 @@ public class ArtListFragment extends Fragment implements LoaderManager.LoaderCal
     @Override
     public void onLoadFinished(Loader<List<String>> loader, List<String> list) {
 
-        final ListView listview = (ListView) myFragmentView.findViewById(R.id.listview2);
+        ListView listview = (ListView) myFragmentView.findViewById(R.id.listview2);
         adapter = new ArrayAdapter<String>(getActivity(),
                 android.R.layout.simple_list_item_1, list);
         listview.setAdapter(adapter);
@@ -94,7 +95,7 @@ public class ArtListFragment extends Fragment implements LoaderManager.LoaderCal
 
     @Override
     public void onLoaderReset(Loader<List<String>> loader) {
-        final ListView listview = (ListView) myFragmentView.findViewById(R.id.listview2);
+        ListView listview = (ListView) myFragmentView.findViewById(R.id.listview2);
         listview.setAdapter(null);
     }
 

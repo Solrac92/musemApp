@@ -9,5 +9,4 @@
         android:entries="@array/Categories"/>
 
 />
-
 </FrameLayout>
